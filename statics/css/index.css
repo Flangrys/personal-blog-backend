@@ -1,0 +1,42 @@
+div.profile__container {
+  display: grid;
+  grid-template-areas: "profile-pic profile-desc" "profile-links profile-links";
+  grid-template-columns: auto 1fr;
+
+  & div.profile__picture {
+    grid-area: profile-pic;
+  }
+
+  & hgroup.profile__desc {
+    grid-area: profile-desc;
+  }
+
+  & div.profile__links {
+    grid-area: profile-links;
+  }
+}
+
+div.profile__picture {
+  margin: 0 var(--pico-block-spacing-horizontal);
+}
+
+img.profile__pic {
+  width: 80px;
+  border-radius: var(--pico-border-radius);
+}
+
+div.profile__links {
+  margin: 0 var(--pico-block-spacing-horizontal);
+
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  align-content: center;
+
+  justify-items: center;
+  align-items: center;
+
+  & > * {
+    margin: 0 var(--pico-spacing);
+  }
+}

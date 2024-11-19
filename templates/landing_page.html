@@ -1,0 +1,11 @@
+{% extends "index.html"%}
+
+{% block page_content %}
+
+{% include "header.html" %}
+
+<main class="container">
+    {% include "author_section.html" with author_title=page_author_title author_description=page_author_desc %}
+</main>
+
+{% endblock %}

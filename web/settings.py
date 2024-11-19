@@ -37,7 +37,7 @@ INSTALLED_APPS = [
     'django.contrib.contenttypes',
     'django.contrib.sessions',
     'django.contrib.messages',
-    'whitenoise.runserver.non_static',
+    'whitenoise.runserver_nostatic',
     'django.contrib.staticfiles',
 ]
 
@@ -58,8 +58,8 @@ TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
         'DIRS': [
-            BASE_DIR / "index.html",
-            BASE_DIR / "app/templates",
+            BASE_DIR / "templates/",
+            BASE_DIR / "fragments/",
         ],
         'APP_DIRS': True,
         'OPTIONS': {

@@ -1,0 +1,21 @@
+<article>
+    <section>
+        <div class="profile__container">
+            <div class="profile__picture">
+                {% load static %}
+                <img class="profile__pic" src="{% static '/images/author@flangrys.jpg' %}" alt="AUTHOR_PROFILE_PIC">
+            </div>
+
+            <hgroup class="profile__desc">
+                <h4>{{ author_title }}</h4>
+                <p>{{ author_description }}</p>
+            </hgroup>
+
+            <div class="profile__links">
+                <a href="https://github.com/flangrys" rel="noopener noreferrer" target="_blank">{% include "icons/brand-github.svg" %}</a>
+                <a href="https://x.com/@flangrys" rel="noopener noreferrer" target="_blank">{% include "icons/brand-twitter.svg" %}</a>
+                <a href="https://twitch.tv/flangrys" rel="noopener noreferrer" target="_blank">{% include "icons/brand-twitch.svg"%}</a>
+            </div>
+        </div>
+    </section>
+</article>
