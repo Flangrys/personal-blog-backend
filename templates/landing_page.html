@@ -6,6 +6,7 @@
 
 <main class="container">
     {% include "author_section.html" with author_title=page_author_title author_description=page_author_desc %}
+    {% include "posts_section.html" with all_posts=page_posts %}
 </main>
 
 {% endblock %}

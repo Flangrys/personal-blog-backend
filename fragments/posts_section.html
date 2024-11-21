@@ -1,0 +1,15 @@
+<article>
+    <section>
+        <div class="posts__container">
+            {% for post in all_posts %}
+            <hgroup>
+                <h4>{{ post.title }}</h4>
+                <p>{{ post.description }}</p>
+            </hgroup>
+            {% empty %}
+            <p>No post :|</p>
+            {% endfor %}
+            <hgroup></hgroup>
+        </div>
+    </section>
+</article>
