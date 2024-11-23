@@ -1,0 +1,19 @@
+<article>
+    <section class="post__article">
+        <div class="post__container">
+            <header class="header__picture">
+                {% load static %}
+                <img src="{% get_static_prefix %}images/header@{{ post.picture_id }}.jpg" alt="POST_HEADER_PICTURE">
+            </header>
+
+            <hgroup class="post__content">
+                <h4>{{ post.title }}</h4>
+                <p>{{ post.content }}</p>
+            </hgroup>
+
+            <div class="post__metadata">
+                <mark class="{{ post.status_class }}">{{ post.status_label }}</mark>
+            </div>
+        </div>
+    </section>
+</article>

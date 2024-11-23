@@ -10,12 +10,19 @@ def landing_view(request: HttpRequest) -> HttpResponse:
 
     all_posts = [post for post in Post.objects.all()]
 
-    return render(
-        request,
-        "landing_page.html",
-        {
-            "page_author_title": "I'm Francisco M. Prieto Giorgis.",
-            "page_author_desc": "Welcome to my personal blog. Built in Django and written by me using so much coffee.",
-            "page_posts": all_posts,
+    context = {
+        "author": {
+            "name": "I'm Francisco M. Prieto Giorgis.",
+            "desc": "Welcome to my personal blog. Built in Django and written by me using so much coffee.",
+            "picture_id": "flangrys",
         },
-    )
+        "post": {
+            "title": "Example post.",
+            "content": "Lorem impsu",
+            "status_class": "new",
+            "status_label": "New",
+            "picture_id": "mendoza-argentina",
+        },
+    }
+
+    return render(request, "pages/landing_page.html", context)

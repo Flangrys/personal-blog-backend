@@ -1,3 +1,36 @@
+:root {
+  --pico-z-index-100: 50;
+  --pico-z-index-25: 25;
+  --pico-z-index-0: 0;
+
+  --pico-indigo-color: #524ed2;
+  --pico-jade-color: #007a50;
+  --pico-blue-color: #2060df;
+  --pico-amber-color: #e8ae01;
+  --pico-red-color: #c52f21;
+
+  scroll-behavior: smooth;
+}
+
+/* SECTION -- TAGS -- */
+
+mark {
+  --pico-mark-background-color: var(--pico-indigo-color);
+  border-radius: var(--pico-border-radius);
+}
+
+mark.edit {
+  --pico-mark-background-color: var(--pico-amber-color);
+}
+
+mark.old {
+  --pico-mark-background-color: var(--pico-blue-color);
+}
+
+/* END -- TAGS -- */
+
+/* SECTION -- PROFILE -- */
+
 div.profile__container {
   display: grid;
   grid-template-areas: "profile-pic profile-desc" "profile-links profile-links";
@@ -40,3 +73,59 @@ div.profile__links {
     margin: 0 var(--pico-spacing);
   }
 }
+
+/* END -- PROFILE -- */
+
+/* SECTION -- POST -- */
+
+section.post__article > div.post__container {
+  display: grid;
+  grid-template-areas: "post-header post-header" "post-content post-meta";
+  grid-template-columns: 6fr auto;
+  grid-template-rows: auto auto;
+  row-gap: var(--pico-spacing);
+
+  & header {
+    grid-area: post-header;
+  }
+
+  & hgroup.post__content {
+    grid-area: post-content;
+    width: 100%;
+  }
+
+  & div.post__metadata {
+    width: 100%;
+    grid-area: post-meta;
+  }
+}
+
+section.post__article div.post__container header.header__picture {
+  border-radius: var(--pico-border-radius);
+  max-width: 100%;
+  max-height: 200px;
+  overflow-y: hidden;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  & img {
+    flex-shrink: 0;
+    object-fit: cover;
+  }
+}
+
+section.post__article div.post__container div.post__metadata {
+  --pico-font-weight: 600;
+  --pico-font-size: 1.25rem;
+
+  display: flex;
+  flex-direction: column;
+  gap: var(--pico-spacing);
+
+  justify-content: center;
+  align-items: center;
+}
+
+/* END -- POST -- */
