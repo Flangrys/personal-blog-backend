@@ -78,9 +78,14 @@ class Post(models.Model):
     post_karma = models.IntegerField(default=0, blank=False, null=False)
     post_date = models.DateField(default=timezone.now, blank=False, null=False)
     post_modified_date = models.DateField(blank=True, null=True)
-    post_parent = models.OneToOneField("Post", on_delete=models.CASCADE, null=True, blank=True)
+    post_parent = models.OneToOneField(
+        "Post", on_delete=models.CASCADE, null=True, blank=True
+    )
     post_tags = models.ManyToManyField(Tag, blank=True, null=True)
     post_content = models.TextField(blank=False, null=False)
+    post_picture_id = models.CharField(
+        unique=True, max_length=20, default="mendoza-argentina", blank=True, null=True
+    )
 
     def __str__(self):
         return f"{self.post_author.get_username()} - {self.post_slug} @{self.post_date}"

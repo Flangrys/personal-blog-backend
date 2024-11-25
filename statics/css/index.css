@@ -15,8 +15,11 @@
 /* SECTION -- TAGS -- */
 
 mark {
-  --pico-mark-background-color: var(--pico-indigo-color);
   border-radius: var(--pico-border-radius);
+}
+
+mark.recent {
+  --pico-mark-background-color: var(--pico-indigo-color);
 }
 
 mark.edit {

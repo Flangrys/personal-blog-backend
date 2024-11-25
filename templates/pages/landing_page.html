@@ -6,7 +6,18 @@
 
 <main class="container">
     {% include "sections/author_section.html" %}
-    {% include "sections/posts_section.html" %}
+    {% for post in posts %}
+    {% include "sections/posts_section.html" with post=post %}
+    {% empty %}
+    <article>
+        <section>
+            <hgroup>
+                <h1>No posts available now.</h1>
+                <p>We just need some inspiration.</p>
+            </hgroup>
+        </section>
+    </article>
+    {% endfor %}
 </main>
 
 {% endblock %}
