@@ -4,6 +4,8 @@ from django.contrib.auth.models import AbstractUser
 from django.db import models
 from django.utils import timezone
 
+from app.managers import PostManager
+
 from .validators import nickname_validation
 
 # Create your models here.
@@ -29,6 +31,7 @@ class User(AbstractUser):
         null=False,
         validators=[nickname_validation],
     )
+    user_about = models.TextField(max_length=190, null=True, blank=True)
     is_writter = models.BooleanField(
         "writter status",
         default=False,
@@ -86,6 +89,8 @@ class Post(models.Model):
     post_picture_id = models.CharField(
         unique=True, max_length=20, default="mendoza-argentina", blank=True, null=True
     )
+
+    objects: PostManager["Post"] = PostManager()
 
     def __str__(self):
         return f"{self.post_author.get_username()} - {self.post_slug} @{self.post_date}"

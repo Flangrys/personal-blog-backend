@@ -16,6 +16,7 @@ class CustomUser(UserAdmin):
             {
                 "fields": (
                     "user_nickname",
+                    "user_about",
                     "is_writter",
                 )
             },
