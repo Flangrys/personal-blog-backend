@@ -1,0 +1,12 @@
+{% extends "base/index.html"%}
+
+{% block page_content %}
+
+{% include "fragments/commons/header.html" %}
+
+<main class="container">
+    {% include "fragments/blog/author_section.html" %}
+    {% include "fragments/blog/posts_section.html"%}
+</main>
+
+{% endblock %}
