@@ -29,7 +29,7 @@ def landing_view(request: HttpRequest) -> HttpResponse:
         },
     }
 
-    return render(request, "pages/landing_page.html", context)
+    return render(request, "pages/landing.html", context)
 
 
 def post_view(request: HttpRequest, **kwargs) -> HttpResponse:
@@ -40,4 +40,4 @@ def post_view(request: HttpRequest, **kwargs) -> HttpResponse:
     if params:
         posts = Post.objects.get(post_slug=params)
 
-    return render(request, "pages/post_page.html", {"all_posts": posts})
+    return render(request, "pages/posts.html", {"all_posts": posts})
